@@ -1,0 +1,91 @@
+html, body{
+    color: #333;
+    font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+    font-size: 16px;
+    margin: 0px;
+}
+.contaniner{
+    color: black;
+    background-color: black;
+}
+.contaniner>div{
+    padding: 70px 45px;
+    border-bottom: 8px solid #222;
+    color: #fff;
+    margin-bottom: 0;
+    position: relative;
+}
+.card_contaniner{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px auto;
+    max-width: 1100px;
+}
+.Scard_contaniner{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px auto;
+    max-width: 1100px;
+    flex-flow: row-reverse;
+}
+.RVideo_Div{
+    height: 100%;
+    left: 50%;
+    max-height: 47%;
+    max-width: 63%;
+    position: absolute;
+    top: 34%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+.left{
+    flex: 0 1 auto;
+    height: 100%;
+    padding: 0 3rem 0 0;
+    width: 52%;
+    z-index: 3;
+}
+.right{
+    box-sizing: border-box;
+    display: flex;
+    flex: 0 1 auto;
+    height: 100%;
+    width: 48%;
+}
+.right>div{
+    overflow: hidden;
+    position: relative;
+}
+h1{
+    font-size: 3.125rem;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+h2{
+    font-size: 1.625rem;
+    font-weight: 400;
+    margin: 0.75em 0 0.25em;
+}
+.VIMG{
+    position: relative;
+    z-index: 2;
+    border: 0px;
+    height: auto;
+    max-width: 100%;
+}
+.Video_Div{
+    height: 100%;
+    left: 50%;
+    max-height: 54%;
+    max-width: 73%;
+    position: absolute;
+    top: 46%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+}
+video{
+    max-width: 100%;
+    max-height: 100%;
+}
