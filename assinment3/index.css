@@ -2,7 +2,7 @@ html body{
     margin: 0px;
     box-sizing: border-box;
 }
-p a{
+p, h1, a{
     font-family: Arial, Helvetica, sans-serif;
 }
 .nav_link{
@@ -123,4 +123,28 @@ p a{
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+@media only screen and (max-width: 700px) {
+    .Header_container{
+        height: 100%;
+        margin: 0px;
+        width: 100%;
+    }
+    .container3{
+        margin: 5px auto;
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: stretch;
+        flex-wrap: wrap;
+    }
+    .footer>div{
+        height: 100%;
+        width: 100%;
+        /* margin: 0px auto; */
+        display: flex;
+        justify-content: space-between;
+    }
 }
