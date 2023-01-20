@@ -55,7 +55,8 @@ p a{
     list-style: none;
 }
 .content1 {
-    height: 200px;
+    min-height: 200px;
+    /* height: 200px; */
     width: 100%;
     position: relative;
     background-color: #c6bfbf;
