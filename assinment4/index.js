@@ -1,30 +1,34 @@
 
-const arrr = [1, 2, 3, 4]
-for(let i in arrr){
-  if(i > 2){
-    break;
+Array.prototype.myReduce = function(fn, initialValue){
+  let init = initialValue === undefined ? this[0] : initialValue;
+  let start = initialValue === undefined ? 1 : 0;
+  for(let i = start; i < this.length; i++){
+    init = fn(init, this[i]);
+    // console.log(init)
   }
+  return init
 }
+
 
 // test
 const a = [1, 2, 4, 4];
 
-console.log(a.makeReduce((accu, curr) => accu + curr, 0));
+console.log(a.myReduce((accu, curr) => {return accu + curr}, 0));
 
 const str = 'abc';
 const strarr = [...str];
 // console.log(strarr);
-console.log([...str].reduce((acc, cur) => acc + cur + cur)); // 'aabbcc';
+console.log([...str].myReduce((acc, cur) => {return acc + cur + cur}, '')); // 'aabbcc';
 
 const array = [1, 2, 3];
 console.log(
-  array.reduce((acc, cur) => {
+  array.myReduce((acc, cur) => {
     return acc + cur; //1, 3, 6
   }, 0)
 );
 
 function foo(arr) {
-  return arr.reduce((obj, ele) => {
+  return arr.myReduce((obj, ele) => {
     return {
       ...obj,
       [ele.name]: ele.age,
@@ -48,7 +52,7 @@ console.log(foo(arr));
 
 const numbers = [175, 50, 25];
 
-const res = numbers.reduce((acc, cur) => {
+const res = numbers.myReduce((acc, cur) => {
   console.log('^ ^');
   return acc - cur;
 }, 0);
