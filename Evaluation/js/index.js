@@ -14,7 +14,8 @@ const View = (() => {
       Userlist: ".container",
       textContainer: '.text_container',
       hide: '.hide',
-      deletebtn: '.deletebtn'
+      deletebtn: '.deletebtn',
+      reload : '.reload'
     };
   
     const render = (ele, tmp) => {
@@ -106,6 +107,12 @@ const Controller = ((model, view) => {
       }
     });
   }
+  const reloadButton = () =>{
+    const reload_Box = document.querySelector(view.domstr.reload);
+    reload_Box.addEventListener('click', event =>{
+      init();
+    }); 
+  };
   
   const init = async() => {
     let userarr = [];
@@ -128,6 +135,7 @@ const Controller = ((model, view) => {
   const bootstrap = () => {
     init();
     deleteTodo();
+    reloadButton();
   }
 
   return {

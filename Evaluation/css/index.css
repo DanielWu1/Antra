@@ -29,9 +29,19 @@ img{
 }
 p{
     font-weight: bold;
+    width: 270px;
 }
 .hide{
     display: none;
+}
+.reload{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px black;
 }
 
 @media only screen and (max-width: 1116px) {
