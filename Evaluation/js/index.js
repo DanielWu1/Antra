@@ -22,6 +22,7 @@ const View = (() => {
     };
     const createTmp = (arr) => {
       // console.log(arr)
+      console.log(arr[0].Birthday)
       let tmp = "";
       arr.forEach((ele) => {
         console.log(ele)
@@ -37,7 +38,6 @@ const View = (() => {
                     <button class="deletebtn">Show Dob</button>
                 </div>   
             </div>
-          <li>
         `;
       });
       return tmp;
@@ -88,7 +88,7 @@ const Model = ((api, view) => {
 })(Api, View);
 
 const Controller = ((model, view) => {
-    const state = new model.State();
+  const state = new model.State();
   
     // const deleteTodo = () => {
     //   const todo_container = document.querySelector(view.domstr.todolist);
@@ -103,32 +103,32 @@ const Controller = ((model, view) => {
     //   });
     // }
   
-    const init = () => {
-      let userarr = [];
-      for(let i = 0; i < 20; i++){
-        let eachUser = new Object();
-        model.getUser().then((user) =>{
-          // console.log(user.results);
-          eachUser.id = model.generateRandomId();
-          eachUser.img = user.results[0].picture.large;
-          eachUser.name = user.results[0].name.title + ' ' + user.results[0].name.first;
-          eachUser.email = user.results[0].email;
-          eachUser.phone = user.results[0].phone;
-          eachUser.Birthday = user.results[0].dob.date;
-        });
-        userarr.push(eachUser);
-      }
-      state.userList = userarr;
-    };
-  
-    const bootstrap = () => {
-      init();
-    //   deleteTodo();
+  const init = async() => {
+    let userarr = [];
+    for(let i = 0; i < 20; i++){
+      let eachUser = {};
+      await model.getUser().then((user) =>{
+        // console.log(user.results);
+        eachUser.id = model.generateRandomId();
+        eachUser.img = user.results[0].picture.large;
+        eachUser.name = user.results[0].name.title + ' ' + user.results[0].name.first;
+        eachUser.email = user.results[0].email;
+        eachUser.phone = user.results[0].phone;
+        eachUser.Birthday = user.results[0].dob.date;
+      });
+      userarr.push(eachUser);
     }
+    state.userList = userarr;
+  };
   
-    return {
-      bootstrap,
-    };
+  const bootstrap = () => {
+    init();
+  //   deleteTodo();
+  }
+
+  return {
+    bootstrap,
+  };
 })(Model, View);
   
 Controller.bootstrap();
