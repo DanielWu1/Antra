@@ -22,10 +22,10 @@ const View = (() => {
     };
     const createTmp = (arr) => {
       // console.log(arr)
-      console.log(arr[0].Birthday)
+      // console.log(arr[0].Birthday)
       let tmp = "";
       arr.forEach((ele) => {
-        console.log(ele)
+        // console.log(ele)
         // console.log(Object.keys(ele))
         tmp += `
             <div class="cardContainer" id=${ele.id}>
@@ -34,8 +34,8 @@ const View = (() => {
                     <p>name: ${ele.name}</p>
                     <p>email: ${ele.email}</p>
                     <p>phone: ${ele.phone}</p>
-                    <p class="hide">${ele.birth}</p>
-                    <button class="deletebtn">Show Dob</button>
+                    <p class="hide" id=birthDay_${ele.id}>Birthday: ${ele.Birthday}</p>
+                    <button class="deletebtn" id=button_${ele.id}>Show Dob</button>
                 </div>   
             </div>
         `;
@@ -90,18 +90,22 @@ const Model = ((api, view) => {
 const Controller = ((model, view) => {
   const state = new model.State();
   
-    // const deleteTodo = () => {
-    //   const todo_container = document.querySelector(view.domstr.todolist);
-    //   todo_container.addEventListener('click', event => {
-    //     if (event.target.className === 'deletebtn') {
-    //       const id = event.target.id;
-    //       state.todos = state.todos.filter(ele => {
-    //         return +ele.id !== +id;
-    //       });
-    //       model.deleteTodo(id);
-    //     }
-    //   });
-    // }
+  const deleteTodo = () => {
+    const User_container = document.querySelector(view.domstr.Userlist);
+    User_container.addEventListener('click', event => {
+      if (event.target.className === 'deletebtn') {
+        let ID = event.target.id.split('_')[1]
+        if(event.target.tagName === 'BUTTON'){
+          document.getElementById('birthDay_' + ID).className = 'deletebtn';
+          event.target.className = "hide";
+        }
+        else{
+          document.getElementById('button_' + ID).className = 'deletebtn';
+          event.target.className = "hide";
+        }
+      }
+    });
+  }
   
   const init = async() => {
     let userarr = [];
@@ -123,7 +127,7 @@ const Controller = ((model, view) => {
   
   const bootstrap = () => {
     init();
-  //   deleteTodo();
+    deleteTodo();
   }
 
   return {

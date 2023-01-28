@@ -33,3 +33,15 @@ p{
 .hide{
     display: none;
 }
+
+@media only screen and (max-width: 1116px) {
+    .cardContainer{
+        height: 160px;
+        width: 100%;
+        border: 1px solid blue;
+        border-radius: 10px;
+        margin: 10px;
+        display: flex;
+        justify-content:space-between;
+    }
+}
