@@ -1,9 +1,33 @@
-.activeState{
+.blueactiveState{
     width: 100%;
     min-height: 300px;
     margin: 0px;
     box-shadow: 10px 10px 5px blue;
     border: 1px solid blue;
+    border-radius: 5px;
+}
+.redactiveState{
+    width: 100%;
+    min-height: 300px;
+    margin: 0px;
+    box-shadow: 10px 10px 5px red;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+.greenactiveState{
+    width: 100%;
+    min-height: 300px;
+    margin: 0px;
+    box-shadow: 10px 10px 5px green;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+.blackactiveState{
+    width: 100%;
+    min-height: 300px;
+    margin: 0px;
+    box-shadow: 10px 10px 5px black;
+    border: 1px solid black;
     border-radius: 5px;
 }
 

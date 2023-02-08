@@ -16,10 +16,10 @@ export class TopicitemComponent{
   getColor() {
     // console.log(typeof this.todo.id);
     this.idemiter.emit(this.eachContent.color);
-    if (this.divStyle == 'baseState') {
-      this.divStyle = 'activeState';
-    } else {
-      this.divStyle = 'baseState';
-    }
+    // if (this.eachContent.select === true) {
+    //   this.divStyle = 'activeState';
+    // } else {
+    //   this.divStyle = 'baseState';
+    // }
   }
 }

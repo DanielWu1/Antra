@@ -12,27 +12,39 @@ export class ContainerComponent{
     {
       title: 'Some Title one',
       content: 'The Mayo Clinic reported that 905 Midwest staffers were diagnosed with COVID-19 in the last two weeks, according to spokesperson Kelley Luckstein. The medical facility has 55,000 employees spread across hospitals and clinics in Wisconsin and Minnesota.',
-      color: 'blue'
+      color: 'blue',
+      select: false
     },
     {
       title: 'Some Title one',
       content: 'The Mayo Clinic reported that 905 Midwest staffers were diagnosed with COVID-19 in the last two weeks, according to spokesperson Kelley Luckstein. The medical facility has 55,000 employees spread across hospitals and clinics in Wisconsin and Minnesota.',
-      color: 'black'
+      color: 'black',
+      select: false
     },
     {
       title: 'Some Title one',
       content: 'The Mayo Clinic reported that 905 Midwest staffers were diagnosed with COVID-19 in the last two weeks, according to spokesperson Kelley Luckstein. The medical facility has 55,000 employees spread across hospitals and clinics in Wisconsin and Minnesota.',
-      color: 'red'
+      color: 'red',
+      select: false
     },
     {
       title: 'Some Title one',
       content: 'The Mayo Clinic reported that 905 Midwest staffers were diagnosed with COVID-19 in the last two weeks, according to spokesperson Kelley Luckstein. The medical facility has 55,000 employees spread across hospitals and clinics in Wisconsin and Minnesota.',
-      color: 'green'
+      color: 'green',
+      select: false
     }
   ]
 
   changeColor(color: string){
     this.titleColor = color;
+    this.eachContents.forEach((ele)=>{
+      if(ele.color === this.titleColor){
+        ele.select = true;
+      }
+      else{
+        ele.select = false;
+      }
+    })
     console.log(color);
   }
 }
