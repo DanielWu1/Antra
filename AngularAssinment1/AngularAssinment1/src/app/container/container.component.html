@@ -1,0 +1,9 @@
+<app-title [titleColor] = "titleColor"></app-title>
+<div class="container">
+    <app-topicitem
+    *ngFor="let eachContent of eachContents;" 
+    [eachContent] = "eachContent"
+    (idemiter) = "changeColor($event)"
+    >
+    </app-topicitem>
+</div>

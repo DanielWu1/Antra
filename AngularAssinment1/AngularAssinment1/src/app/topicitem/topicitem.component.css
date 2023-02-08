@@ -1,0 +1,23 @@
+.activeState{
+    width: 100%;
+    min-height: 300px;
+    margin: 0px;
+    box-shadow: 10px 10px 5px blue;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+.baseState{
+    width: 100%;
+    min-height: 300px;
+    margin: 0px;
+    border-radius: 5px;
+}
+h2, p{
+    font-family: 'Brush Script MT', 'Cursive';
+}
+button{
+    color: aliceblue;
+    width: 80px;
+    height: 40px;
+}

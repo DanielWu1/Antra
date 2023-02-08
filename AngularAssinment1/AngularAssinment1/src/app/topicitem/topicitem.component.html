@@ -1,0 +1,5 @@
+<div [ngClass]="[divStyle]">
+    <h2>{{eachContent.title}}</h2>
+    <p>{{eachContent.content}}</p>
+    <button (click)="getColor()"[ngStyle]= "{'background-color' : eachContent.color}">Set {{eachContent.color}}</button>
+</div>
