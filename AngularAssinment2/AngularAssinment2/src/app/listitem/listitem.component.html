@@ -1,0 +1,11 @@
+<div>
+    name: {{each.name}}
+    <ul
+    *ngIf = 'each.child.length > 0'>
+        <li
+        *ngFor = "let each of each.child">
+            child-
+            <app-listitem [each] = "each"></app-listitem>
+        </li>
+    </ul>
+</div>
