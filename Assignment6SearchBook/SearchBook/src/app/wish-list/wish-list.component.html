@@ -1,1 +1,6 @@
-<p>wish-list works!</p>
+<div class="wishContainer">
+    <app-wish-item
+    *ngFor = "let book of wishList"
+    [book] = 'book'>
+    </app-wish-item>
+</div>

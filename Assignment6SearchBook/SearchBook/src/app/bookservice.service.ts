@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject, tap } from 'rxjs';
-import { apiData, EachBook } from './interfaces';
+import { apiData, EachBook, wishBook } from './interfaces';
 
 const baseUrl : string = "https://www.googleapis.com/books/v1/volumes?q="
 @Injectable({
@@ -12,7 +12,7 @@ export class BookserviceService {
   bookList: EachBook[] = [];
   bookList$ =  new Subject();
 
-  wishList: EachBook[] = [];
+  wishList: wishBook[] = [];
   wishList$ = new Subject();
 
   constructor(private http: HttpClient) { }
@@ -24,7 +24,7 @@ export class BookserviceService {
           return {
             pickture: each.volumeInfo.imageLinks.smallThumbnail ? each.volumeInfo.imageLinks.smallThumbnail: '',
             name: each.volumeInfo.title ? each.volumeInfo.title: '',
-            publisher: each.volumeInfo.title ? each.volumeInfo.publisher: '',
+            publisher: each.volumeInfo.publisher ? each.volumeInfo.publisher: '',
             data: each.volumeInfo.publishedDate ? each.volumeInfo.publishedDate: '',
             description: each.volumeInfo.description ? each.volumeInfo.description: '',
           }
@@ -33,5 +33,17 @@ export class BookserviceService {
         console.log(this.bookList);
       })
     )
+  }
+
+  addWishList(book: wishBook){
+    this.wishList.push(book);
+    return this.wishList$.next(this.wishList);
+  }
+
+  deleteWishList(name: string){
+    this.wishList = this.wishList.filter((data:wishBook)=>{
+      return data.name !== name;
+    });
+    return this.wishList$.next(this.wishList);
   }
 }

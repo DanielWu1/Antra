@@ -11,6 +11,7 @@ import { WishListComponent } from './wish-list/wish-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
+import { WishItemComponent } from './wish-item/wish-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     BookListComponent,
     BookItemComponent,
     WishListComponent,
-    NavBarComponent
+    NavBarComponent,
+    WishItemComponent
   ],
   imports: [
     BrowserModule,

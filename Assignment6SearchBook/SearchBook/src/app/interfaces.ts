@@ -10,3 +10,6 @@ export interface apiData {
     totalItems: number;
     items: [];
 }
+export interface wishBook {
+    name: string;
+}
