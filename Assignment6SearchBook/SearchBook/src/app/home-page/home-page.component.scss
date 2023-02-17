@@ -1,0 +1,32 @@
+.homePageContainer{
+    width: 100%;
+    height: 100%;
+}
+app-nav-bar{
+    display: block;
+    width: 100%;
+    height: 10%;
+}
+app-search-input{
+    display: block;
+    height: 7%;
+    width: 100%;
+    padding: 0px 20%;
+}
+.bottomContainer{
+    height: 83%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid red;
+}
+app-book-list{
+    height: 100%;
+    width: 70%;
+    border: 1px solid red;
+}
+app-wish-list{
+    height: 100%;
+    width: 30%;
+    border: 1px solid red;
+}
