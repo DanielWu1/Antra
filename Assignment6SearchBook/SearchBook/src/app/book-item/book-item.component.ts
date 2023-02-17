@@ -13,18 +13,19 @@ export class BookItemComponent implements OnInit {
   @Input() book !: EachBook;
   @ViewChild('card', {static: true}) card !: ElementRef;
   subsq = new Subscription();
+  wishBook1!: wishBook
   
 
   constructor(private Bookservice: BookserviceService){
   }
 
   ngOnInit(): void {
-    const wishBook1: wishBook = {
+    this.wishBook1 = {
       name: this.book.name? this.book.name: "do not have name"
       } as wishBook
     this.subsq = fromEvent(this.card.nativeElement, 'click').pipe(
       tap((_) =>{
-        return this.Bookservice.addWishList(wishBook1);
+        return this.Bookservice.addWishList(this.wishBook1);
       })
     )
     .subscribe();

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject, tap } from 'rxjs';
+import { catchError, of, Subject, tap } from 'rxjs';
 import { apiData, EachBook, wishBook } from './interfaces';
 
 const baseUrl : string = "https://www.googleapis.com/books/v1/volumes?q="
@@ -18,21 +18,28 @@ export class BookserviceService {
   constructor(private http: HttpClient) { }
 
   getBooks(name:string){
-    return this.http.get<apiData>(baseUrl + name).pipe(
-      tap((data) =>{
-        this.bookList = data.items.map((each:any)=>{
-          return {
-            pickture: each.volumeInfo.imageLinks.smallThumbnail ? each.volumeInfo.imageLinks.smallThumbnail: '',
-            name: each.volumeInfo.title ? each.volumeInfo.title: '',
-            publisher: each.volumeInfo.publisher ? each.volumeInfo.publisher: '',
-            data: each.volumeInfo.publishedDate ? each.volumeInfo.publishedDate: '',
-            description: each.volumeInfo.description ? each.volumeInfo.description: '',
-          }
+    if(name.trim() !== ''){
+      return this.http.get<apiData>(baseUrl + name).pipe(
+        tap((data) =>{
+          this.bookList = data.items.map((each:any)=>{
+            return {
+              pickture: each.volumeInfo.imageLinks.smallThumbnail ? each.volumeInfo.imageLinks.smallThumbnail: '',
+              name: each.volumeInfo.title ? each.volumeInfo.title: '',
+              publisher: each.volumeInfo.publisher ? each.volumeInfo.publisher: '',
+              data: each.volumeInfo.publishedDate ? each.volumeInfo.publishedDate: '',
+              description: each.volumeInfo.description ? each.volumeInfo.description: '',
+            }
+          })
+          this.bookList$.next(this.bookList);
+          console.log(this.bookList);
+        }),
+        catchError((err : any) =>{
+          console.log(err);
+          return err
         })
-        this.bookList$.next(this.bookList);
-        console.log(this.bookList);
-      })
-    )
+      )
+    }
+    return of(0);
   }
 
   addWishList(book: wishBook){
