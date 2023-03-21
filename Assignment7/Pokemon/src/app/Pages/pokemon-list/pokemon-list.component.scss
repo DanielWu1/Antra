@@ -1,0 +1,28 @@
+.container{
+    // width: 100%;
+    // height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.confirm-box {
+  background-color: black;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  text-align: center;
+}
+.example-card {
+    max-width: 400px;
+    border: 1px solid black;
+}
+img{
+    width: 228px;
+    height: 220px;
+    border: 1px solid black;
+}
+
+.example-header-image {
+    background-size: cover;
+}
