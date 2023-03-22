@@ -1,0 +1,12 @@
+ul{
+    list-style-type: none;
+}
+li{
+    border: 1px black solid;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+}
+li:hover{
+    background-color: rgb(87, 87, 236);
+    color: aliceblue;
+}
