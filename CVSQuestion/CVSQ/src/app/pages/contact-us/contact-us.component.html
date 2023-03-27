@@ -1,0 +1,47 @@
+<div class="content">
+    <div class="h2Container">
+        <h2>Contact us</h2>
+    </div>
+</div>
+<div *ngIf = "!flage" class="formContainer">
+    <form [formGroup] = "form" (ngSubmit) = "onSubmit()">
+        <label for="Name">Name:</label>
+        <br>
+        <input type="text" id="Name" formControlName = "name">
+        <div *ngIf = "!nameV?.valid && (nameV.dirty || nameV.touched)" >
+            <br>
+            <div *ngIf = "nameV.errors?.['required']" class = "invalid">
+                Name is required!!!
+            </div>
+        </div>
+        <br>
+        <label for="Message">Message:</label>
+        <br>
+        <input type="text" id="Message" formControlName = "message">
+        <div *ngIf = "!messageV?.valid && (messageV.dirty || messageV.touched)" >
+            <br>
+            <div *ngIf = "messageV.errors?.['required']" class = "invalid">
+                Message is required!!!
+            </div>
+            <div *ngIf = "messageV.errors?.['minLength']" class = "invalid">
+                Message must longer than 10!!!
+            </div>
+        </div>
+        <br>
+        <br>
+        <button [disabled]="!form.valid" [ngClass] = "form.valid? 'Mybutton' : 'MyIbutton'">Send Message</button>
+    </form>
+</div>
+<div *ngIf = "flage" class="submitInfoContainer">
+    <div class="h3Container">
+        <h3 style="color:green">Thank you for contacting us. We will be in tonch shortly!</h3>
+    </div>
+    <div class="submitInfo">
+        <p>Yor have submitted the following message:</p>
+        <p>Name:</p>
+        <p>{{nameV.value}}</p>
+        <br>
+        <p>Message:</p>
+        <p>{{messageV.value}}</p>
+    </div>
+</div>

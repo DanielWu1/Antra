@@ -1,0 +1,60 @@
+.content{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.h2Container{
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.formContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+form{
+    width: 80%;
+}
+input{
+    width: 500px;
+    min-height: 40px;
+}
+.Mybutton{
+    width: 250px;
+    min-height: 40px;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    border: none;
+}
+.invalid{
+    color: red;
+    font-size: 1.5rem;
+}
+.MyIbutton{
+    width: 250px;
+    min-height: 40px;
+    color: black;
+    background-color: gray;
+    border-radius: 10px;
+    border: none;
+}
+.submitInfoContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.h3Container{
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+.submitInfo{
+    border-top: 1px solid black;
+}

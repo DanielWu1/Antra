@@ -1,0 +1,39 @@
+.contentContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.content{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.h2Container{
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.eachBox{
+    min-height: 128px;
+    width: 80%;
+    display: flex;
+    background-color: rgb(196, 195, 195);
+    margin-bottom: 10px;
+}
+.leftContainer{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+.rightContainer{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+}

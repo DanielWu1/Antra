@@ -1,0 +1,27 @@
+.NavContainer{
+    min-height: 20px;
+    background-color: red;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.leftContainer{
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+    height: 100%;
+    width: 40%;
+}
+.rightContainer{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+.navBox{
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}

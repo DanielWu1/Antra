@@ -1,0 +1,19 @@
+<div class="content">
+    <div class="h2Container">
+        <h2>CVS Users</h2>
+    </div>
+</div>
+<div class="contentContainer">
+    <div
+        class="eachBox"
+        *ngFor="let user of userList"
+    >
+        <div class="leftContainer">
+            <img src="{{user.avatar}}">
+        </div>
+        <div class="rightContainer">
+            <h3>{{user.first_name}} {{user.last_name}}</h3>
+            <h4>{{user.email}}</h4>
+        </div>
+    </div>
+</div>
