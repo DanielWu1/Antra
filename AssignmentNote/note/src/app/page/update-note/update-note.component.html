@@ -1,0 +1,30 @@
+<div>
+    update data
+    <form class="texts" [formGroup]="form">
+        <label for="title">title</label>
+        <br>
+        <input
+          type="text"
+          class="title-text"
+          id="title"
+          formControlName="title"
+        />
+        <br>
+        <label for="contents">contents</label>
+        <br>
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          id="contents"
+          formControlName="contents"
+        ></textarea>
+      </form>
+      <button [disabled]="form.invalid" (click)="revert()">
+        Revert
+      </button>
+      <button [disabled]="form.invalid" (click)="save()">
+        Save
+      </button>
+</div>

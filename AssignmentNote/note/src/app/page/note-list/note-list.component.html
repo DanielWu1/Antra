@@ -1,0 +1,11 @@
+<div class="ListContainer">
+    Note List <button (click) = 'addNew()'>+</button>
+    <ul>
+        <li
+        *ngFor="let eachNote of dataList"
+        (click)="select(eachNote)">
+        {{eachNote.title}}
+        <button (click) = "delete(eachNote.id)">X</button>
+        </li>
+    </ul>
+</div>

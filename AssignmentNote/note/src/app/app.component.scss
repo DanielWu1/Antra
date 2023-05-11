@@ -1,0 +1,15 @@
+.container{
+    width: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+}
+app-note-list{
+    width: 50%;
+    height: 100%;
+    background-color: gray;
+}
+app-update-note{
+    width: 50%;
+    height: 100%;
+}
