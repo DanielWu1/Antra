@@ -1,0 +1,8 @@
+<div class="container">
+    <ul>
+        <li *ngFor = 'let todo of todoList' [ngClass] = "todo.completed? 'completedLi' : 'noli'" (click) = "completedli(todo.id)">
+            {{todo.title}}
+            <span class="spa" (click) = 'deleteTodo(todo.id)'>x</span>
+        </li>
+    </ul>
+</div>
