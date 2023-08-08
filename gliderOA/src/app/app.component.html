@@ -1,0 +1,9 @@
+<div class="SerchContainer">
+  <input [(ngModel)]="serchUser">
+  <button (click)="SearchUsers()">Search</button>
+</div>
+<div class="ListContiner">
+  <app-search-results
+  [Item] = 'userList'>
+  </app-search-results>
+</div>

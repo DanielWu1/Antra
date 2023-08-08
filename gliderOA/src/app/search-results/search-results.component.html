@@ -1,0 +1,19 @@
+<div class = "cardContainer">
+    <table>
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>Profile URL Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let eachItem of Item">
+            <td>{{ eachItem.id }}</td>
+            <td>{{ eachItem.login }}</td>
+            <td>{{ eachItem.url }}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+</div>
