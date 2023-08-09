@@ -8,4 +8,5 @@ import { Item } from '../shared/services/interface';
 })
 export class SearchResultsComponent {
   @Input() Item !: Item[];
+  @Input() searchText !: string;
 }
